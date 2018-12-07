@@ -7,7 +7,7 @@ sudo apt -y dist-upgrade
 echo "deb http://archive.ubuntu.com/ubuntu/ xenial main universe" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 
-sudo apt install -y nano htop git curl wget unzip
+sudo apt install -y nano htop git curl wget unzip gksu
 cd ~
 #wget https://github.com/paxex/paxchange/releases/download/untagged-e0e0941d004617ef49e6/linux-ubuntu1604.zip
 wget https://github.com/paxex/paxchange/releases/download/untagged-e0e0941d004617ef49e6/linux-qt.zip
@@ -16,10 +16,9 @@ unzip linux-qt.zip -d paxex
 #rm linux-ubuntu1604.zip
 rm linux-qt.zip
 
-#sudo apt install -y nano htop git curl
+wget -P ~/paxex https://paxexcoin.com/assets-web/img/logo.png
 
 sudo apt install -y software-properties-common
-
 sudo apt install -y libzmq3-dev
 sudo apt install -y build-essential libtool autotools-dev pkg-config libssl-dev
  
@@ -36,8 +35,23 @@ sudo apt install -y libdb4.8-dev libdb4.8++-dev
 
 
 cd ~/paxex
-chmod +x paxchange*
-sudo mv paxchange* /usr/local/bin/
+#chmod +x paxchange*
+#sudo mv paxchange* /usr/local/bin/
+
+#Exec = gksu -k -u root $HOME/paxex/paxchange-qt
+
+cat > $HOME/.local/share/applications/paxex.desktop <<DELIM
+[Desktop Entry]
+Encoding=UTF-8
+Name=PAXEX-WALLET
+Comment=crypo
+Exec = $HOME/paxex/paxchange-qt
+Icon = $HOME/paxex/logo.png
+Categories=Application;CRYPTO;WALLET
+Version=1.0
+Type=Application
+Terminal=0
+DELIM
 
 cd ~
 paxchange-qt
