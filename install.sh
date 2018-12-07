@@ -54,5 +54,5 @@ Terminal=0
 DELIM
 
 cd ~
-paxchange-qt
+~/paxex/paxchange-qt
 
