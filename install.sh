@@ -18,13 +18,17 @@ sudo apt install -y libqrencode3 libprotobuf9v5 libminiupnpc10 libevent-pthreads
 sudo apt install -y libdb4.8-dev libdb4.8++-dev
 
 
-cd ~
-wget https://github.com/paxex/paxchange/releases/download/untagged-e0e0941d004617ef49e6/linux-qt.zip
-unzip linux-qt.zip -d paxex
-rm linux-qt.zip
+cd ~/paxex
+
+wget https://github.com/paxex/Paxex/releases/download/2.0.0/paxex-2.0.0-x86_64-linux-QT.tar.gz
+
+tar -xzf paxex-2.0.0-x86_64-linux-QT.tar.gz
+
+rm paxex-2.0.0-x86_64-linux-QT.tar.gz
+
 wget -P ~/paxex https://paxexcoin.com/assets-web/img/logo.png
 
-cd ~/paxex
+
 chmod +x paxchange*
 cat > $HOME/.local/share/applications/paxex.desktop <<DELIM
 [Desktop Entry]
