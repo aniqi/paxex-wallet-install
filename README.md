@@ -12,7 +12,7 @@ wget -q https://github.com/aniqi/paxex-wallet-install/releases/download/v1/insta
 
 **Please take a moment to donate!**
 
-PAXEX: `PAcZuLbtxkDnkYpjg85stMMRXw3ZuTUY24`
+PAXEX: ``
 
 BTC: `13pDwVGaUQMYEsCYFEP7a6kNG66HNCYiGK`
 
